@@ -1,16 +1,16 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 // Type
 interface Props {
-  onFormSubmit: (term: string) => Promise<void>
+  onFormSubmit: (term: string) => Promise<void>;
 }
 
 const SearchBar: React.FC<Props> = ({ onFormSubmit }) => {
-  const [ term, setTerm ] = useState<string>('')
-  
-  const onSubmit = (e:React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    onFormSubmit(term)
-  }
+  const [term, setTerm] = useState<string>('');
+
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    onFormSubmit(term);
+  };
 
   return (
     <div className="ui segment">
